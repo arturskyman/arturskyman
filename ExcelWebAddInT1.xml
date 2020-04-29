@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+          xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+          xsi:type="TaskPaneApp">
+  <Id>bdb0c148-86d1-4789-ae6a-3e5fb97a61b5</Id>
+  <Version>0.1.0.0</Version>
+  <ProviderName>Petr Langr</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="My test functions" />
+  <Description DefaultValue="Generate random sample data"/>
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="CustomFunctionsRuntime" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://moraviait.sharepoint.com/:f:/r/sites/pam/Shared%20Documents/AddIns/Test01?csf=1&web=1&e=rHtWL4" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <AllFormFactors>
+          <ExtensionPoint xsi:type="CustomFunctions">
+            <Script>
+              <SourceLocation resid="Funcjs" />
+            </Script>
+            <Page>
+              <SourceLocation resid="Funchtml"/>
+            </Page>
+            <Metadata>
+              <SourceLocation resid="Funcmeta"/>
+            </Metadata>
+            <Namespace resid="Funcns" />
+          </ExtensionPoint>
+        </AllFormFactors>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Urls>
+        <bt:Url id="Funcjs" DefaultValue="https://moraviait.sharepoint.com/:u:/r/sites/pam/Shared%20Documents/AddIns/Test01/myfunc.js?csf=1&web=1&e=gb9GDh" />
+        <bt:Url id="Funchtml" DefaultValue="https://moraviait.sharepoint.com/:u:/r/sites/pam/Shared%20Documents/AddIns/Test01/mypage.html?csf=1&web=1&e=0nAbYX" />
+        <bt:Url id="Funcmeta" DefaultValue="https://moraviait.sharepoint.com/sites/pam/_layouts/15/download.aspx?UniqueId=ee13e3a84c054280aad321029b421726&e=JALhiY" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Funcns" DefaultValue="TEST" />
+      </bt:ShortStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
